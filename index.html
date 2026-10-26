@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Dashboard</h1>
+
+    <div class="input-container">
+      <!-- Theme Switch (Top Corner of Input Container) -->
+      <div class="theme-switch-wrapper">
+        <span id="theme-label">🌙 Dark</span>
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
+
+      <!-- Search & Geolocation Row -->
+      <div class="search-box">
+        <input type="text" placeholder="Enter city..." id="city-input" />
+        <button id="get-weather-btn" type="button">Search</button>
+        <button id="geo-btn" type="button" title="Use current location">📍</button>
+      </div>
+    </div>
+
+    <!-- Weather Information Card -->
+    <div id="weather-info" class="hidden">
+      <h2 id="city-name"></h2>
+      <img id="weather-icon" src="" alt="Weather icon" />
+      <p id="temperature" class="temp-display"></p>
+      <p id="feels-like"></p>
+      <p id="description"></p>
+
+      <div class="extra-details">
+        <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+        <p><strong>Wind Speed:</strong> <span id="wind"></span> m/s</p>
+        <p><strong>Air Quality:</strong> <span id="aqi"></span></p>
+      </div>
+
+      <!-- 5-Day Forecast Section -->
+      <h3>5-Day Forecast</h3>
+      <div id="forecast-container" class="forecast-grid"></div>
+    </div>
+
+    <p class="hidden" id="error-message">City not found or request failed. Please try again.</p>
+  </div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
